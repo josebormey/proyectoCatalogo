@@ -1,0 +1,36 @@
+name: Build Cordova APK
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install Cordova
+      run: npm install -g cordova
+
+    - name: Add Android platform
+      run: |
+        cordova platform add android
+        cordova requirements
+
+    - name: Build APK
+      run: cordova build android --release
+
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: catalogo-apk
+        path: platforms/android/app/build/outputs/apk/release/*.apk
