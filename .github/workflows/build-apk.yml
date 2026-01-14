@@ -24,7 +24,6 @@ jobs:
     - name: Add Android platform
       run: |
         cordova platform add android
-        cordova requirements
 
     - name: Build APK
       run: cordova build android --release
