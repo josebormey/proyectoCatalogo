@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Catálogo Multimedia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery Mobile -->
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body>
+
+<!-- Página principal -->
+<div data-role="page" id="home">
+  <div data-role="header">
+    <h1>Catálogo Multimedia</h1>
+  </div>
+  <div data-role="content">
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#imagenes">Galería de Imágenes</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#textos">Textos Interactivos</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Página de imágenes -->
+<div data-role="page" id="imagenes">
+  <div data-role="header"><h1>Imágenes</h1></div>
+  <div data-role="content">
+    <img src="img/producto1.jpg" alt="Producto 1" class="media">
+    <img src="img/producto2.jpg" alt="Producto 2" class="media">
+    <a href="#home" data-role="button">Volver</a>
+  </div>
+</div>
+
+<!-- Página de videos -->
+<div data-role="page" id="videos">
+  <div data-role="header"><h1>Videos</h1></div>
+  <div data-role="content">
+    <video controls class="media">
+      <source src="videos/demo.mp4" type="video/mp4">
+      Tu dispositivo no soporta video.
+    </video>
+    <a href="#home" data-role="button">Volver</a>
+  </div>
+</div>
+
+<!-- Página de textos -->
+<div data-role="page" id="textos">
+  <div data-role="header"><h1>Textos Interactivos</h1></div>
+  <div data-role="content">
+    <p id="texto1">Haz clic en el botón para cambiar este texto.</p>
+    <button onclick="cambiarTexto()">Cambiar Texto</button>
+    <a href="#home" data-role="button">Volver</a>
+  </div>
+</div>
+
+</body>
+</html>
