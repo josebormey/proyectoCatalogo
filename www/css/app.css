@@ -2,15 +2,35 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.media {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
 button {
   background-color: #0078d7;
   color: white;
   border: none;
   padding: 10px;
   border-radius: 5px;
+}
+
+.media {
+  width: 100%;
+  opacity: 0; 
+  margin-bottom: 15px;
+}
+
+.fade-blinds {
+  animation: blindsFade 1.5s forwards;
+}
+
+@keyframes blindsFade {
+  0% {
+    opacity: 0;
+    clip-path: inset(100% 0 0 0); /* Oculto desde arriba */
+  }
+  50% {
+    opacity: 0.5;
+    clip-path: inset(50% 0 0 0); /* Mitad visible */
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0); /* Totalmente visible */
+  }
 }

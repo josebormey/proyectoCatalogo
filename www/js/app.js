@@ -6,3 +6,12 @@ function cambiarTexto() {
     texto.innerHTML = "Haz clic en el botón para cambiar este texto.";
   }
 }
+
+$(document).on("pageshow", "#imagenes", function() {
+    $(".media").each(function(index) {
+        let img = $(this);
+        setTimeout(function() {
+            img.addClass("fade-blinds");
+        }, index * 400); // efecto escalonado entre imágenes
+    });
+});
